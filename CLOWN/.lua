@@ -74,8 +74,9 @@ T1:AddToggle({
             table.insert(trigger_, X.Name)
         end
         
-        AttackTarget(_G.NPCtrigger,trigger_[math.random(1,#trigger_)])
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace").NPC[_G.NPCtrigger][trigger_].CFrame)
+        local randomizer = trigger_[math.random(1, #trigger_)]
+        AttackTarget(_G.NPCtrigger,randomizer)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace").NPC[_G.NPCtrigger][randomizer].CFrame)
       end
   end
 })
