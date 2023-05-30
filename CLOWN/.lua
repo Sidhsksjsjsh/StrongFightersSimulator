@@ -54,6 +54,11 @@ function hatch(name)
   game:GetService("ReplicatedStorage").Network.OpenEgg:InvokeServer(name, "Single")
 end
 
+function quest()
+  game:GetService("ReplicatedStorage").Network.TakeQuest:FireServer("Lumberjack")
+  game:GetService("ReplicatedStorage").Network.TakeQuest:FireServer("Instructor")
+end
+
 T1:AddDropdown({
     Name = "Select NPC name",
     Default = "?",
@@ -113,6 +118,18 @@ T1:AddToggle({
          while wait() do
         if _G.BB == false then break end
         equipbat()
+      end
+  end
+})
+
+T1:AddToggle({
+    Name = "Auto Quest",
+    Default = false,
+    Callback = function(val)
+        _G.QT = val
+         while wait() do
+        if _G.QT == false then break end
+        quest()
       end
   end
 })
