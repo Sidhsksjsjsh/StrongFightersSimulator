@@ -6,12 +6,6 @@ local Window = OrionLib:MakeWindow({Name = "Strong Fighters Simulator", HidePrem
 
 local T1 = Window:MakeTab({
 Name = "Farm",
-Icon = "rbxassetid://4483345998",
-PremiumOnly = false
-})
-
-local T1 = Window:MakeTab({
-Name = "Farm",
 Icon = "rbxassetid://9073052584",
 PremiumOnly = false
 })
@@ -81,6 +75,7 @@ T1:AddToggle({
         end
         
         AttackTarget(_G.NPCtrigger,trigger_[math.random(1,#trigger_)])
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace").NPC[_G.NPCtrigger][trigger_].CFrame)
       end
   end
 })
